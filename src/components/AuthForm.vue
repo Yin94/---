@@ -10,7 +10,11 @@
         required
         :placeholder="mode?'Email/ Username/ Phone':'Email'"
       />
-      <small v-if="inputClass[0]!=='form-control'" class="text-danger">Invalid email address</small>
+      <div
+        v-if="inputClass[0]!=='form-control'"
+        class="alert alert-danger mt-2"
+        role="alert"
+      >Invalid email address</div>
     </div>
     <div class="form-group">
       <label for>Password</label>
@@ -20,10 +24,11 @@
         type="password"
         placeholder="Password"
       />
-      <small
+      <div
         v-if="inputClass[1]!=='form-control'"
-        class="text-danger"
-      >Invalid password {{mode?"":'Format, should between 3 and 30 characters, contain special character '}}</small>
+        class="alert alert-danger mt-2"
+        role="alert"
+      >Invalid password {{mode?"":'Format, should between 3 and 30 characters, contain special character '}}</div>
     </div>
     <template v-if="!mode">
       <div class="form-group">
@@ -34,29 +39,29 @@
           type="text"
           placeholder="Username"
         />
-        <small
+
+        <div
           v-if="inputClass[2]!=='form-control'"
-          class="text-danger"
-        >Invalid username, should have length between 3 and 20</small>
+          class="alert alert-danger mt-2"
+        >Invalid username, should have length between 3 and 20</div>
       </div>
       <div class="form-group">
         <label for="email">Phone Number</label>
-
         <input
           :class="inputClass[3]"
           v-model="formData.phone"
           type="text"
           placeholder="Phone Number"
         />
-        <small
+        <div
           v-if="inputClass[3]!=='form-control'"
-          class="text-danger"
-        >Invalid phone number, should have plain 11 digits. Like 19311119081</small>
+          class="alert alert-danger mt-2"
+        >Invalid phone number, should have plain 11 digits. Like 19311119081</div>
       </div>
     </template>
     <div class="row justify-content-around">
-      <button @click.prevent="submitForm" class="btn btn-primary col-md-4">Submit</button>
-      <button type="button" @click="resetForm" class="btn btn-danger col-md-4">Clear</button>
+      <button @click.prevent="submitForm" class="btn btn-primary col-6 col-md-4">Submit</button>
+      <button type="button" @click="resetForm" class="btn btn-danger col-4 col-md-4">Clear</button>
       <p class="pt-2 mb-0">
         {{mode? 'Not a member yet?':'Already have an account?'}}
         <router-link :to="mode?'/auth/0':'/auth/1'">
@@ -182,3 +187,11 @@ const signupSchema = Joi.object().keys({
     .error(new Error(3))
 });
 </script>
+
+<style scoped>
+@media screen and (max-width: 400px) {
+  button:first-child {
+    /* margin-bottom: 10px; */
+  }
+}
+</style>

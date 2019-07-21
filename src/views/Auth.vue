@@ -6,6 +6,7 @@
 
 <script>
 import Form from "../components/AuthForm.vue";
+
 export default {
   components: {
     Form
@@ -24,7 +25,7 @@ form {
   background-color: #f7f7f9;
   width: 90%;
   max-width: 600px;
-  padding: 25px;
+  padding: 15px 25px;
   padding-top: 10px;
   position: absolute;
   top: 50%;

@@ -2,6 +2,10 @@
 node_modules
 /dist
 
+#TODO delete this part when prod
+*.jpg
+*.jpeg
+*.png
 # local env files
 .env.local
 .env.*.local

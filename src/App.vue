@@ -1,14 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/auth/1">Signin</router-link>|
-      <router-link to="/auth/0">Signup</router-link>
-    </div>
+    <NavBar v-on:searched="searchedHandler"></NavBar>
     <router-view />
   </div>
 </template>
+<script>
+import NavBar from "./components/NavBar.vue";
+export default {
+  components: {
+    NavBar
+  },
+  methods: {
+    searchedHandler(input) {
+      this.$router.push(`/items?focus=${input}`);
+    }
+  }
+};
+</script>
 
 <style>
-@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap/dist/css/bootstrap.css";
 </style>

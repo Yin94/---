@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Auth from "./views/Auth.vue";
+
 Vue.use(Router);
 
 export default new Router({
@@ -20,6 +20,16 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ "./views/Auth.vue")
+    },
+    {
+      path: "/item-detail/:id",
+      name: "item-detail",
+      component: () => import(/* webpackChunkName: "about" */ "./views/ItemDetail.vue")
+    },
+    {
+      path: "/items",
+      name: "items",
+      component: () => import(/* webpackChunkName: "about" */ "./views/Items.vue")
     }
   ]
 });
