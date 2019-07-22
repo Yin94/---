@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <router-link class="navbar-brand" to="#">Navbar</router-link>
+    <router-link class="navbar-brand" to="/">Navbar</router-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -27,7 +27,7 @@
           <router-link class="nav-link" to="#">关于焗瓷堂</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/item-detail/0">详情</router-link>
+          <router-link class="nav-link" to="/dashboard">个人中心</router-link>
         </li>
         <form class="form-inline ml-lg-4 my-2 my-lg-0">
           <input
@@ -42,10 +42,10 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item mr-3">
-          <router-link class="nav-link" to="auth/0">注册</router-link>
+          <router-link class="nav-link" to="/auth/0">注册</router-link>
         </li>
         <li class="nav-item mr-3">
-          <router-link class="nav-link" to="auth/1">登录</router-link>
+          <router-link class="nav-link" to="/auth/1">登录</router-link>
         </li>
       </ul>
     </div>

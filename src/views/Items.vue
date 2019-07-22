@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="container">
-      <ItemList @clicked="clickedHandler" :itemList="itemList"></ItemList>
+      <ItemList :itemList="itemList"></ItemList>
     </div>
   </div>
 </template>
@@ -31,11 +31,7 @@ export default {
       })
     };
   },
-  methods: {
-    clickedHandler(id) {
-      this.$router.push(`/item-detail/${id}`);
-    }
-  }
+  methods: {}
 };
 </script>
 

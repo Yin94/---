@@ -30,6 +30,28 @@ export default new Router({
       path: "/items",
       name: "items",
       component: () => import(/* webpackChunkName: "about" */ "./views/Items.vue")
+    },
+    {
+      path: "/favorites",
+      name: "favorites",
+      component: () => import("./views/Favorites.vue")
+    },
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: () => import("./views/DashBoard.vue"),
+      children: [
+        {
+          path: "pswd-update",
+          name: "paswd-change",
+          component: () => import("./components/PasswordUpdate.vue")
+        },
+        {
+          path: "personal-info",
+          name: "personal-info",
+          component: () => import("./components/PersonInfo.vue")
+        }
+      ]
     }
   ]
 });
